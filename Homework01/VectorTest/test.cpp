@@ -46,7 +46,7 @@
 TEST(Vector2DTestSuite, constructorTest01) {		//tests constructors
 	Vector2D v1(1, 1);
 
-	std::string expectedResult = "(1, 1)"; 
+	std::string expectedResult = "(1, 1)";
 	std::string result = v1.toString();
 
 	EXPECT_EQ(expectedResult, result);
@@ -144,7 +144,7 @@ TEST(Vector2DTestSuite, arithmeticOperatorTest01) {		// tests addition
 	Vector2D v1(2, 3);
 	Vector2D v2(40, 70);
 	Vector2D expectedResult(42, 73);
-	
+
 
 	ASSERT_EQ((v1 + v2), expectedResult);
 }
@@ -155,12 +155,12 @@ TEST(Vector2DTestSuite, arithmeticOperatorTest02) {		// tests plus equals
 	Vector2D expectedResult(42, 73);
 	v2 += v1;
 
-	ASSERT_EQ (v2, expectedResult);
+	ASSERT_EQ(v2, expectedResult);
 }
 
 TEST(Vector2DTestSuite, arithmeticOperatorTest03) {		// tests pre-fix increment plus plus
 	Vector2D v1(2, 3);
-	
+
 	Vector2D expectedResult(3, 4);
 	Vector2D v2 = ++v1;
 

@@ -77,7 +77,7 @@ bool AlmostEqualRelative(double A, double B,
 
 bool Vector2D::operator==(const Vector2D& rhs) const {			//equals
 	double epsilon = 1E-5;
-	return (AlmostEqualRelative(length(), rhs.length()));           
+	return (AlmostEqualRelative(length(), rhs.length()));
 }
 
 bool Vector2D::operator!=(const Vector2D& rhs) const {			//not equals
@@ -96,7 +96,7 @@ bool Vector2D::operator>(const Vector2D& rhs) const				//greater than
 }
 
 bool Vector2D::operator<=(const Vector2D& rhs) const			//lesser or equal to
-{	
+{
 	return (AlmostEqualRelative(length(), rhs.length()) || (_x < rhs._x) && (_y < rhs._y));
 }
 
@@ -118,7 +118,7 @@ std::istream& operator>>(std::istream& is, Vector2D& rhs)
 	return is;
 }
 
-Vector2D Vector2D::operator + (const Vector2D & rhs) const {
+Vector2D Vector2D::operator + (const Vector2D& rhs) const {
 	return Vector2D(_x + rhs._x, _y + rhs._y);
 }
 
