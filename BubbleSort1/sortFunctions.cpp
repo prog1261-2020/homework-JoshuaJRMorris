@@ -83,5 +83,92 @@ int findSmall(std::vector<int> Vec, int i) {
 	return pos;
 }
 
+int partition(std::vector<int>& v, int left, int right) {
+	int pivotIndex = left + (right - left) / 2;
+	int pivotValue = v[pivotIndex];
+	int i = left, j = right;
+	int temp;
+	while (i <= j) {
+		while (v[i] < pivotValue) {
+			i++;
+		}
+		while (v[j] > pivotValue) {
+			j--;
+		}
+		if (i <= j) {
+			temp = v[i];
+			v[i] = v[j];
+			v[j] = temp;
+			i++;
+			j--;
+		}
+	}
+	return i;
+}
+
+std::vector<int>quicksort(std::vector<int>& v, int left, int right) {
+	if (left < right) {
+		int pivotIndex = partition(v, left, right);
+		quicksort(v, left, pivotIndex - 1);
+		quicksort(v, pivotIndex, right);
+	}
+	return v;
+}
+
+
+//int partition(std::vector<int> v, int low, int high)
+//{
+//	int pivot = v[high];
+//	int i = (low - 1);
+//	for (int j = low - 1;j <= high - 1; j++) {
+//		if (v[j] < pivot) {
+//			i++;
+//			swap(v[i], v[j]);
+//		}
+//	}
+//	swap(v[i + 1], v[high]);
+//	return i + 1;
+//}
+
+
+
+//std::vector<int> qSort(std::vector<int>& v)
+//{
+//	for (int i = 0;i < v.size();i++) {
+//		quickSort(v);
+//	}
+//}
+//
+//int quickSort(std::vector<int>&v, int low, int high)
+//{
+//	int high;
+//	int low;
+//	if (low < high) {
+//		int p = partition(v, low, high);
+//		quickSort(v, low, p - 1);
+//		quickSort(v, p + 1, high);
+//	}
+//	return v;
+//}
+
+//int quickSort(int v, int low, int high)
+//{
+//	int high;
+//	int low;
+//	if (low < high) {
+//		int p = partition(v, low, high);
+//		quickSort(v, low, p - 1);
+//		quickSort(v, p + 1, high);
+//	}
+//	return v;
+//}
+
+//void swap(int a, int b)
+//{
+//	int tmp = a;
+//	a = b;
+//	b = tmp;
+//}
+
 
 

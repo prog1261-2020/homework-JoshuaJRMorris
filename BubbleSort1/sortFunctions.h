@@ -47,3 +47,12 @@ std::vector<int> bsort(std::vector<int>& v);
 std::vector<int> selsort(std::vector<int>& v);
 //Vector function to find the smallest element
 int findSmall(std::vector<int> Vec, int i);
+
+int partition(std::vector<int>& values, int left, int right);
+std::vector<int>quicksort(std::vector<int>& values, int left, int right);
+
+//int partition(std::vector<int>v, int low, int high);
+//std::vector<int> qSort(std::vector<int>& v);
+//int quickSort(std::vector<int>&v, int low, int high);
+////int quickSort(int v, int low, int high);
+//void swap(int a, int b);
